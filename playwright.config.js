@@ -19,8 +19,8 @@ module.exports = defineConfig({
         baseURL: 'http://127.0.0.1:8080', // будем ходить сюда
         headless: process.env.CI ? true : false,                 // для локального дебага можно false
         reporter: [
-            ['list'],
-            ['junit', { outputFile: 'results.xml' }]
+            ['html', { open: 'never' }],
+            ['junit', { outputFile: 'test-results/results.xml' }]
         ],
     },
 
@@ -29,7 +29,8 @@ module.exports = defineConfig({
         command: 'npx http-server -p 8080 -c-1',
         port: 8080,
         // url: 'http://127.0.0.1:8080',
-        reuseExistingServer: !process.env.CI, // локально переиспользуем, в CI всегда свежий
+        // reuseExistingServer: !process.env.CI, // локально переиспользуем, в CI всегда свежий
+        reuseExistingServer: true,
         timeout: 30 * 1000,
     },
 });

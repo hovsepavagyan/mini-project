@@ -23,7 +23,7 @@ pipeline {
 
     post {
         always {
-            junit 'playwright-report/*.xml' // если генерируешь junit-репорты
+            junit 'test-results/results.xml' // если генерируешь junit-репорты
             archiveArtifacts artifacts: 'playwright-report/**', allowEmptyArchive: true
         }
     }
