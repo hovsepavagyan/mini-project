@@ -22,6 +22,19 @@ pipeline {
 
         stage('Run tests') {
             steps {
+                // Запускаем сервер в фоне
+                bat 'start /B npx serve -s . -l 8080'
+
+                // Ждём несколько секунд, чтобы сервер поднялся
+                bat 'timeout /t 5'
+
+                // Запуск тестов
+                bat 'npx playwright test'
+            }
+        }
+
+        stage('Run tests') {
+            steps {
                 bat 'npx playwright test'
             }
         }
