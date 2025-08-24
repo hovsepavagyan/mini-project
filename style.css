@@ -1,0 +1,5 @@
+:root { font-family: Arial, sans-serif; }
+body { display: flex; min-height: 100vh; margin: 0; }
+main { margin: auto; text-align: center; }
+input, button { padding: 8px 12px; margin: 6px; font-size: 16px; }
+#greeting { margin-top: 12px; font-weight: bold; }
