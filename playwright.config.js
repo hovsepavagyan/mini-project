@@ -17,7 +17,7 @@ module.exports = defineConfig({
 
     use: {
         baseURL: 'http://127.0.0.1:8080', // будем ходить сюда
-        headless: false,                    // для локального дебага можно false
+        headless: true,                    // для локального дебага можно false
     },
 
     // Автозапуск dev-сервера перед тестами
