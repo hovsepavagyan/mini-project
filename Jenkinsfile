@@ -14,6 +14,12 @@ pipeline {
             }
         }
 
+        stage('Install Playwright Browsers') {
+            steps {
+                bat 'npx playwright install'
+            }
+        }
+
         stage('Run tests') {
             steps {
                 bat 'npx playwright test'
@@ -24,7 +30,7 @@ pipeline {
     post {
         always {
             junit 'test-results/results.xml' // если генерируешь junit-репорты
-            archiveArtifacts artifacts: 'playwright-report/**', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'test-results/results.xml', allowEmptyArchive: true
         }
     }
 }
