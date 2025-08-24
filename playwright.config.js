@@ -24,7 +24,7 @@ module.exports = defineConfig({
         ],
     },
 
-    Автозапуск dev-сервера перед тестами
+    // Автозапуск dev-сервера перед тестами
     webServer: {
         // command: 'npx http-server -p 8080 -c-1',
         command: 'npx serve -s . -l 8080',
