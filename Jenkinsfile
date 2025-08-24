@@ -26,7 +26,7 @@ pipeline {
                 bat 'start /B npx serve -s . -l 8080'
 
                 // Ждём несколько секунд, чтобы сервер поднялся
-                bat 'timeout /t 5'
+                bat 'node -e "setTimeout(() => {}, 5000)"'
 
                 // Запуск тестов
                 bat 'npx playwright test'
