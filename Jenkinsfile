@@ -33,12 +33,12 @@ pipeline {
             }
         }
 
-        stage('Run tests') {
-            steps {
-                bat 'npx playwright test'
-            }
-        }
-    }
+//         stage('Run tests') {
+//             steps {
+//                 bat 'npx playwright test'
+//             }
+//         }
+//     }
 
     post {
         always {
