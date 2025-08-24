@@ -11,5 +11,6 @@ test('Greet button with name', async ({ page }) => {
 test('Greet button without name', async ({ page }) => {
     await page.goto('/index.html');
     await page.click('#greetBtn');
+
     await expect(page.locator('#greeting')).toHaveText('Hello, Guest!');
 });
