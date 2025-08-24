@@ -18,6 +18,10 @@ module.exports = defineConfig({
     use: {
         baseURL: 'http://127.0.0.1:8080', // будем ходить сюда
         headless: process.env.CI ? true : false,                 // для локального дебага можно false
+        reporter: [
+            ['list'],
+            ['junit', { outputFile: 'results.xml' }]
+        ],
     },
 
     // Автозапуск dev-сервера перед тестами
