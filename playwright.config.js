@@ -18,20 +18,20 @@ module.exports = defineConfig({
     use: {
         baseURL: 'http://127.0.0.1:8080', // будем ходить сюда
         headless: process.env.CI ? true : false,                 // для локального дебага можно false
-        reporter: [
-            ['html', { open: 'never' }],
-            ['junit', { outputFile: 'test-results/results.xml' }]
-        ],
+        // reporter: [
+        //     ['html', { open: 'never' }],
+        //     ['junit', { outputFile: 'test-results/results.xml' }]
+        // ],
     },
 
     // Автозапуск dev-сервера перед тестами
     webServer: {
-        // command: 'npx http-server -p 8080 -c-1',
-        command: 'npx serve -s . -l 8080',
+        command: 'npx http-server -p 8080 -c-1',
+        // command: 'npx serve -s . -l 8080',
         port: 8080,
         // url: 'http://127.0.0.1:8080',
-        // reuseExistingServer: !process.env.CI, // локально переиспользуем, в CI всегда свежий
-        reuseExistingServer: true,
+        reuseExistingServer: !process.env.CI, // локально переиспользуем, в CI всегда свежий
+        // reuseExistingServer: true,
         timeout: 30 * 1000,
     },
 });
